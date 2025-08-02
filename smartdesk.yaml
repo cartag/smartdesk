@@ -526,7 +526,7 @@ touchscreen:
   cs_pin: ${cs_touchscreen}
   interrupt_pin: GPIO36
   update_interval: 50ms
-  threshold: 800
+  threshold: 800 #this is the touch sensitivity. If it is too low, it will register phantom pushes and the desk will randomly go up or down
   on_touch:  
     - lambda: |-
           ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
@@ -1001,4 +1001,5 @@ script:
               // Datum aktualisieren
               char date_buffer[50];
               snprintf(date_buffer, sizeof(date_buffer), "%s, %d. %s", day_map[now.day_of_week - 1], now.day_of_month, month_map[now.month - 1]);
+
               return date_buffer;
