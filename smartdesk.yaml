@@ -12,8 +12,8 @@ substitutions:
   loctekmotion_rx_pin: GPIO3 # Hardware UART
   loctekmotion_screen_pin: GPIO22 # Loctek "Screen Pin", used for data transfer
   # Adjust for Safety/Convenience
-  min_height: "25" # in
-  max_height: "47" # in
+  min_height: "25" # 25 for in, 63.5 for cm
+  max_height: "45" # 45 for in, 115 for cm
   ### Light-related settings
   led_r_pin: GPIO4
   led_r_inverted: "true"
@@ -1003,3 +1003,4 @@ script:
               snprintf(date_buffer, sizeof(date_buffer), "%s, %d. %s", day_map[now.day_of_week - 1], now.day_of_month, month_map[now.month - 1]);
 
               return date_buffer;
+
